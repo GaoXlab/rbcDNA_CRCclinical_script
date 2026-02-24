@@ -30,7 +30,7 @@ GC-corrected BAM files should be placed in bams/gc_corrected/, and the module da
 
 # 2. run the pipeline
 ```bash
-# 10-kb CPM data construction and rbcDNA-enriched/-depleted value generation for the development cohort.
+# 1. 10-kb CPM data construction and rbcDNA-enriched/-depleted value generation for the development cohort.
 ./script/step1.sh zheer
 
 # zheer pipeline
