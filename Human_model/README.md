@@ -37,14 +37,16 @@ GC-corrected BAM files should be placed in bams/gc_corrected/, and the module da
 # 2. Feature preprocessing, GAM-normalization, and feature selection.
 ## Hardware requirement: At least 48 cores and 96GB RAM
 ./script/batch_build.sh zheer
+./script/batch_build_search.sh zheer
 
 # 3. Feature reduction, model development, and integration.
-./script/step3.sh zheer 
+TYPE="zheer"
+./script/step3.sh "$TYPE" 
 python ./script/step3_test.py "$TYPE" `pwd` internal_test 
+python ./script/step3_test.py "$TYPE" `pwd` trn 
 
 # 4. Independent validation.
 TYPE="zheer"
-
 # 4.1. Feature data construction for each independent validation set.
 ./script/extend_feature_data.sh "$TYPE" ind_sd
 ./script/extend_feature_data.sh "$TYPE" ind_wz

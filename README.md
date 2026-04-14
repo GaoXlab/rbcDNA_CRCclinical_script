@@ -32,7 +32,13 @@ For human rbcDNA WGS samples, an additional preprocessing step is required to ge
 ```
 ## 3. Subsequent modeling analysis for human samples  
 
-- **./Human_model/**: Scripts and workflows for building rbcDNA-based classification models to identify advanced colorectal neoplasia, including colorectal cancer (CRC) and advanced adenoma (AA). Detailed execution steps and analysis procedures are provided within the corresponding subdirectories.  
+**./Human_model/**: Scripts and workflows for building rbcDNA-based classification models to identify advanced colorectal neoplasia, including colorectal cancer (CRC) and advanced adenoma (AA). Detailed execution steps and analysis procedures are provided within the corresponding subdirectories.  
+
+## 4. Comments for figure generation
+Note: Run this script from the parent directory of the working directory. It will automatically generate all figures and table data used in the manuscript. This step requires a server with at least 48 CPU cores and 96 GB RAM. The file Supplementary_Tables.xlsx must be placed in the Figures directory.
+```bash
+./Human_Model/script/step4.sh `pwd`
+```
 
 ## Software version and hardware requirements
 
