@@ -3,9 +3,9 @@
 source $(dirname ${BASH_SOURCE[0]})/config.sh
 
 TYPE=$1
+python "$SCRIPT_DIR"/build_sample_info.py "$TYPE" "$MODEL_DATA_DIR"
 
 "$SCRIPT_DIR"/build_feature_data.sh "$MODEL_DATA_DIR"/"$TYPE".p100.ids.txt trim_q30_gcc_10k_cpm
-
 "$SCRIPT_DIR"/build_feature_data.sh "$MODEL_DATA_DIR"/"$TYPE".p100.ids.txt r_enriched
 "$SCRIPT_DIR"/build_feature_data.sh "$MODEL_DATA_DIR"/"$TYPE".p100.ids.txt r_depleted
 

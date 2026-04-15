@@ -204,7 +204,7 @@ zr_clinfo_crc_e <- zr_info %>%
   mutate(
     Subgroup_new = factor(ifelse(Subgroup == '/', 'Unknown', as.character(Subgroup)), levels = c('I', 'II', 'III', 'IV', 'Unknown')),
     T_lab = factor(case_when(T %in% c('1', '2') ~ 'T1-T2', T %in% c('3', '4') ~ 'T3-T4', TRUE ~ NA_character_), levels = c('T1-T2', 'T3-T4')),
-    N_lab_new = factor(case_when(N == '0' ~ 'N0', N %in% c('0-1', '1', '2') ~ 'N>1', TRUE ~ NA_character_), levels = c('N0', 'N>1')),
+    N_lab_new = factor(case_when(N == '0' ~ 'N0', N %in% c('1', '2') ~ 'N>1', TRUE ~ NA_character_), levels = c('N0', 'N>1')),
     M_new = factor(case_when(M == '0' ~ 'M0', M == '1' ~ 'M1', TRUE ~ NA_character_), levels = c('M0', 'M1'))
   )
 
