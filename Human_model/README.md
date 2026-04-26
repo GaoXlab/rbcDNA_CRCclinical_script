@@ -6,6 +6,7 @@
 ├── bams
 │   ├── gc_corrected
 │   └── pipeline_trimmomatic
+├── rbcDNA_regions
 ├── modelData
 │   ├── empty
 │   │   ├── cleaned
@@ -30,6 +31,8 @@ GC-corrected BAM files should be placed in bams/gc_corrected/, and the module da
 
 # 2. run the pipeline
 ```bash
+# 0. build rbcDNA-enriched/-depleted regions.
+./script/step0.sh
 # 1. 10-kb CPM data construction and rbcDNA-enriched/-depleted value generation for the development cohort.
 ./script/step1.sh zheer
 
